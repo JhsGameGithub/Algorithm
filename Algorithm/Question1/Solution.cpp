@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
 
 	//나의 풀이
 	//등차수열의 합 공식 사용
-	sum2 = (float)(n / 2) * (1 + n / m);
+	sum2 = (n / m * (m + n - n % m)) / 2;
 
 	cout << sum1 << " " << sum2;
 }
