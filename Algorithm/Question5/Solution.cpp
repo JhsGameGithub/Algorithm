@@ -1,4 +1,5 @@
-#include <iostream>
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
 
 using namespace std;
 
@@ -10,10 +11,9 @@ int main(int argc, char* argv[])
 
 	char a[20];
 	int year, age;
+	scanf("%s", &a);
 
 	//강의 풀이
-
-	scanf("%s", &a);
 	if (a[7] == '1' || a[7] == '2')
 		year = 1900 + ((a[0] - 48) * 10 + (a[1] - 48));
 	else
@@ -36,4 +36,5 @@ int main(int argc, char* argv[])
 	gender = a[7] - 48 % 2 == 1 ? 'M' : 'W';
 	printf("%d %c\n", age, gender);
 
+	return 0;
 }
