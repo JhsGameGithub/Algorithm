@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 {
 	//조건1 == 3 <= N <= 100,000
 	
-	int n, sum1 = 0, sum2 = 0;
+	int n, a, sum1 = 0, sum2 = 0;
 
 	cin >> n;
 
@@ -32,10 +32,11 @@ int main(int argc, char* argv[])
 	//생각하는데 시간이 걸림.
 	//배열을 n개만큼 선언해서 10으로 나눈 나머지 수까지 +1 하는 생각에서 도출함.
 
+	a = n;
 	for (int i = 1; n / i != 0; i *= 10)
 	{
-		sum2 += n;
-		n -= 9 * i;
+		sum2 += a;
+		a -= 9 * i;
 	}
 
 	cout << sum2;
