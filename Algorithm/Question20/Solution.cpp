@@ -29,5 +29,8 @@ int main(int argc, char* argv[])
 		cout << (char)answer[i] << endl;
 	}
 
+
+	//강의에서는 if문을 사용해 승패를 가림.
+	//배열을 사용하면 더 빠르니, 바꿀 필요가 없음.
 	return 0;
 }
