@@ -8,18 +8,25 @@ int main(int argc, char* argv[])
 {
 	//조건1 = 자연수 갯수 N은 5 이상 100,000 이상, 첫 번째 줄 입력
 	//조건2 = 100,000 이하의 자연수 N개가 주어짐, 두 번째 줄 입력
+	//조연3 = 입력되는 자연수들은 100 이하의 숫자들
 
-	int n, Current = 0, Before = 0, Continue = 0, Max = 0;
+	int n, Current = 0, Previous = 0, Continue = 0, Max = 0;
 
 	cin >> n;
 
-	for (int i = 0; i < n; i++)
+	cin >> Previous;
+
+	for (int i = 1; i < n; i++)
 	{
 		cin >> Current;
-		Continue = Current >= Before ? Continue + 1 : 1;
+		Continue = Current >= Previous ? Continue + 1 : 1;
 		Max = Continue > Max ? Continue : Max;
-		Before = Current;
+		Previous = Current;
 	}
 	cout << Max;
+
+	//강의를 보고 변수명 변경
+
+
 	return 0;
 }
