@@ -9,10 +9,14 @@ int main(int argc, char* argv[])
 	//조건1 == 첫 번째 줄에는 A의 숫자, 두 번째 줄에는 B의 숫자
 	//조건2 == 라운드는 10 라운드
 	//조건3 == 승리는 3점, 무승부는 1점씩. 점수와 승자를 출력.
+	//조건4 == 점수가 같다면, 마지막 승리자 출력.
+	//조건5 == 비기는 경우는 모든 라운드에서 비길 때 이므로, D를 출력.
 
 	int aCard[10];
-	int bCard[10];
-	int aScore = 0, bScore = 0;
+	int bCard;
+	int score[2] = { 0,0 };
+	char lastWinner = 'D';
+	bool winner;
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -20,28 +24,33 @@ int main(int argc, char* argv[])
 	}
 	for (int i = 0; i < 10; i++)
 	{
-		cin >> bCard[i];
-	}
+		cin >> bCard;
 
-	for (int i = 0; i < 10; i++)
-	{
-		aScore = aCard[i] > bCard[i] ? aScore + 3 : aScore;
-		bScore = aCard[i] < bCard[i] ? bScore + 3 : bScore;
+		//A Score == score[0]
+		//B Score == score[1]
 
-		if (aCard[i] == bCard[i])
+		if (aCard[i] == bCard)
 		{
-			aScore++;
-			bScore++;
+			score[0]++;
+			score[1]++;
+			continue;
 		}
+		winner = aCard[i] > bCard ? 0 : 1;
+		score[winner] += 3;
+		lastWinner = winner + 65;
 	}
 
-	cout << aScore << " " << bScore << endl;
-	if (aScore > bScore)
+	cout << score[0] << " " << score[1] << endl;
+
+	if (score[0] > score[1])
 		cout << 'A';
-	else if (aScore = bScore)
-		cout << 'D';
-	else
+	else if (score[0] < score[1])
 		cout << 'B';
+	else
+		cout << lastWinner;
+
+	//문제를 제대로 읽지 않아 프로그램이 의도와 달리 작동됨.
+	//강의를 시청 후, 빠진 부분을 다시 자세하게 읽고 고침.
 
 	return 0;
 }
