@@ -27,20 +27,21 @@ int main(int argc, char* argv[])
 
 		index = current - previous > 0 ? current - previous : previous - current;
 
-		sequence[--index] = true;
-
-		previous = current;
-	}
-
-	for (int i = 0; i < n - 1; i++)
-	{
-		if (!sequence[i])
+		if (sequence[--index])
 		{
 			cout << "NO";
 			return 0;
 		}
+		else
+			sequence[index] = true;
+
+		previous = current;
 	}
 
 	cout << "YES";
 	return 0;
+
+	//강의에서는 int형 배열을 사용 했지만
+	//저는 bool형 배열을 사용하여 풀었습니다.
+	//중복되는 경우는 무조건 거짓임을 간과했습니다.
 }
