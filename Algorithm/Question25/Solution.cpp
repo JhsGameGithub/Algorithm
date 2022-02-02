@@ -31,5 +31,7 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < n; i++)
 		cout << number[i] << " ";
 
+	//강의 시청 후 특이사항 없음.
+
 	return 0;
 }
