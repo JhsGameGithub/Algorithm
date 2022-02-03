@@ -14,43 +14,34 @@ int main(int argc, char* argv[])
 
 	cin >> n;
 
-	bool primeNumber;
+	int* primeNumber = new int[n + 1]{ 0, };
 
-	int count, temp;
-
-	cout << n << "! =";
+	int tmp, index;
 
 	for (int i = 2; i <= n; i++)
 	{
-		count = 0;
-		primeNumber = true;
-
-		for (int j = 2; j * j <= i; j++)
+		tmp = i;
+		index = 2;
+		while (tmp != 1)
 		{
-			if (i % j == 0)
+			if (tmp % index == 0)
 			{
-				primeNumber = false;
-				break;
+				tmp = tmp / index;
+				primeNumber[index]++;
 			}
+			else
+				index++;
 		}
-
-		if (primeNumber)
-		{
-			for (int k = 2; k <= n; k++)
-			{
-				temp = k;
-				while (temp % i==0)
-				{
-					temp /= i;
-					count++;
-				}
-			}
-
-			cout << " " << count;
-		}
-		else
-			continue;
 	}
+
+	cout << n << "! =";
+	for (int i = 2; i <= n; i++)
+		if (primeNumber[i] != 0)
+			cout << " " << primeNumber[i];
+
+	//저의 풀이는 3중 반복문을 썼지만, 강의 풀이는 2중 반복문을 썼습니다.
+	//습관적으로 메모리를 아껴서 코드를 짜다보니 3중 반복문을 쓸 수 밖에 없었습니다.
+	//속도를 더 빠르게 하는 방향으로 코드를 짜는 습관을 들여야 할 것 같습니다.
 
 	return 0;
 }
