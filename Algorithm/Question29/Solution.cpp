@@ -22,5 +22,7 @@ int main(int argc, char* argv[])
 
 	cout << count;
 
+	//강의 풀이는 while 을 썼을 뿐, 전체적으로 방향은 같습니다.
+
 	return 0;
 }
