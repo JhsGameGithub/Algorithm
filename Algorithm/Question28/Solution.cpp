@@ -27,5 +27,10 @@ int main(int argc, char* argv[])
 
 	cout << count;
 
+	//강의 풀이에서는 10을 기준으로 count를 늘렸습니다.
+	//하지만 2보다 5가 많으므로 올라가는 수마다
+	//5로 소인수 분해를 해서 count를 늘리면 되므로
+	//5를 기준으로 count로 늘리는 것이 더 빠릅니다.
+
 	return 0;
 }
