@@ -22,6 +22,10 @@ int main(int argc, char* argv[])
 		count += digit > 2 ? (n + 1) * i : n * i;
 	}
 
+	//푸는데 정말 오래 걸렸습니다. 강의 풀이에서는 while문을 사용했습니다.
+	//전체적인 풀이 방식에는 차이가 없습니다만, 어려운 문제였는지
+	//강의 시간이 한 문제에 35분씩이나 되었습니다.
+
 	cout << count;
 
 	return 0;
