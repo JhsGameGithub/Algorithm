@@ -36,5 +36,7 @@ int main(int argc, char* argv[])
 
 	cout << carbon * 12 + hydro;
 
+	// 강의 풀이와 크게 다르지 않습니다.
+
 	return 0;
 }
