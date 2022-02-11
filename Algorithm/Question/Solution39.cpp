@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-//삽입정렬
+//두 배열 합치기
 int main(int argc, char* argv[])
 {
 	int n1, n2;
