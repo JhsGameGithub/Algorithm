@@ -17,13 +17,14 @@ int main(int argc, char* argv[])
 
 	sort(binary.begin(), binary.end());
 
-	for (int i = 0; i < n; i++)
-		cout << binary[i] << endl;
-
-	int index = n % 2 == 0 ? n / 2 : n / 2 + 1;
+	int tmp = n / 2;
+	int index = tmp;
 
 	while (binary[index] != m)
-		index = m < binary[index] ? index - index / 2 : index + index / 2;
+	{
+		tmp /= 2;
+		index = m < binary[index] ? index - tmp : index + tmp;
+	}
 
 	cout << index + 1;
 
