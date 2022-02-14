@@ -12,26 +12,46 @@ int main(int argc, char* argv[])
 
 	vector<int> binary(n);
 
+	int sum = 0;
+
 	for (int i = 0; i < n; i++)
+	{
 		cin >> binary[i];
+		sum += binary[i];
+	}
 
 	sort(binary.begin(), binary.end());
 
-	int tmp = n / 2;
-	int index = tmp;
+	int number = 0, dvd = m;
 
-	while (--m != 0)
+	int left = 1, right = sum, answer = 0;
+
+	for (int mid = (left + right) / 2;
+		right - left > 0;
+		mid = (left + right) / 2)
 	{
-		tmp /= 2;
-		index += tmp;
+		dvd = m - 1;
+		number = 0;
+		for (int i = 0; i < n; i++)
+		{
+			number += binary[i];
+			if(number>=mid)
+			{
+				number = number == mid ? 0 : binary[i];
+				dvd--;
+			}
+		}
+
+		if (dvd >= 0)
+		{
+			right = mid - 1;
+			answer = mid;
+		}
+		else if (dvd < 0)
+			left = mid + 1;
 	}
 
-	int min = 0;
-
-	for (int i = index; i < n; i++)
-		min += binary[i];
-
-	cout << min;
+	cout << answer;
 
 	return 0;
 }
