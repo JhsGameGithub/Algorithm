@@ -17,8 +17,6 @@ int main(int argc, char* argv[])
 	{
 		cin >> x[i];
 	}
-	
-	sort(x.begin(), x.end());
 
 	int left = x[0], mid, right = x[n - 1], answer = 0, count, last;
 
