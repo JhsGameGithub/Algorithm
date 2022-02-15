@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-//마구간 정하기(이분검색 응용)
+//공주 구하기
 int main(int argc, char* argv[])
 {
 	int n, k;
