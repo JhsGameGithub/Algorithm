@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 		}
 
 		average = sum / 9.0f + 0.5f;
-
+		
 		answer[i][0] = (int)average;
 	
 		for (int j = 0; j < 9; j++)
