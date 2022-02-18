@@ -24,6 +24,13 @@ int main(int argc, char* argv[])
 		}
 	}
 
+	if (!correct.empty())
+	{
+		cout << "NO";
+		return 0;
+	}
+
+
 	cout << "YES";
 	return 0;
 }
