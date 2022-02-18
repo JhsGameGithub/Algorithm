@@ -17,11 +17,8 @@ int main(int argc, char* argv[])
 			correct.push(1);
 		else if (!correct.empty())
 			correct.pop();
-		else 
-		{
-			cout << "NO";
-			return 0;
-		}
+		else
+			break;
 	}
 
 	if (!correct.empty())
