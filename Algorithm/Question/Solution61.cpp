@@ -25,7 +25,7 @@ void DFS(int x)
 	DFS(x + 1);
 }
 
-//이진트리 깊이우선탐색(DFS)
+//특정 수 만들기(DFS)
 int main(int argc, char* argv[])
 {
 	cin >> n >> m;
