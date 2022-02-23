@@ -2,56 +2,41 @@
 
 using namespace std;
 
-int answer = 0;
+int cnt = 0, n;
 
-int road[20] = { 0, }, index = 0;
+bool map[20][20], ch[20];
 
-bool mat[20][20];
-
-void DFS(int begin, int end);
-
+void DFS(int v)
+{
+	if (v == n - 1)
+	{
+		cnt++;
+	}
+	else
+	{
+		for (int i = 0; i < n; i++)
+		{
+			if (map[v][i] && !ch[i])
+			{
+				ch[i] = true;
+				DFS(i);
+				ch[i] = false;
+			}
+		}
+	}
+}
 //°æ·Î Å½»ö(DFS)
 int main(int argc, char* argv[])
 {
-	int n, m;
-
+	int m, a, b;
 	cin >> n >> m;
-
-
-	int begin, end;
-
 	for (int i = 0; i < m; i++)
 	{
-		cin >> begin >> end;
-
-		mat[begin - 1][end - 1] = true;
+		cin >> a >> b;
+		map[a - 1][b - 1] = true;
 	}
-
-	DFS(1, n);
-
-	cout << answer;
-
+	ch[0] = true;
+	DFS(0);
+	cout << cnt;
 	return 0;
-}
-
-void DFS(int begin,int end)
-{
-	if (begin == end)
-	{
-		answer++;
-		return;
-	}
-	road[index++] = begin;
-	for (int i = 0; i < index - 1; i++)
-	{
-		if (road[i] == begin)
-		{
-			road[index--] = 0;
-			return;
-		}
-	}
-	for (int i = 0; i < end; i++)
-		if (mat[begin - 1][i])
-			DFS(i + 1, end);
-	road[index--] = 0;
 }
