@@ -4,9 +4,9 @@ using namespace std;
 
 int answer = 0, road = 0, n;
 
-int map[20][20];
+vector<pair<int, int>> map[20];
 
-bool ch[20];
+bool ch[20] = { 0, };
 
 void DFS(int v)
 {
@@ -14,15 +14,15 @@ void DFS(int v)
 		answer = road < answer ? road : answer;
 	else
 	{
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < map[v].size(); i++)
 		{
-			if (map[v][i] != 0 && !ch[i])
+			if (!ch[map[v][i].first])
 			{
-				ch[i] = true;
-				road += map[v][i];
-				DFS(i);
-				ch[i] = false;
-				road -= map[v][i];
+				ch[map[v][i].first] = true;
+				road += map[v][i].second;
+				DFS(map[v][i].first);
+				ch[map[v][i].first] = false;
+				road -= map[v][i].second;
 			}
 		}
 	}
@@ -31,10 +31,6 @@ void DFS(int v)
 //°æ·Î Å½»ö(DFS)
 int main(int argc, char* argv[])
 {
-	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++)
-			map[i][j] = 0;
-
 	int m, a, b, c;
 
 	cin >> n >> m;
@@ -42,7 +38,7 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < m; i++)
 	{
 		cin >> a >> b >> c;
-		map[a - 1][b - 1] = c;
+		map[a - 1].push_back({ b - 1,c });
 		answer += c;
 	}
 

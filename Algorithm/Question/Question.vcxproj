@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Solution67.cpp" />
     <ClCompile Include="Solution68.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
