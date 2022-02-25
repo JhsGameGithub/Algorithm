@@ -2,16 +2,16 @@
 #include <vector>
 using namespace std;
 
-int answer = 0, road = 0, n;
+int answer = 0, n;
 
 int map[20][20];
 
 bool ch[20];
 
-void DFS(int v)
+void DFS(int v,int sum)
 {
 	if (v == n - 1)
-		answer = road < answer ? road : answer;
+		answer = sum < answer ? sum : answer;
 	else
 	{
 		for (int i = 0; i < n; i++)
@@ -19,10 +19,8 @@ void DFS(int v)
 			if (map[v][i] != 0 && !ch[i])
 			{
 				ch[i] = true;
-				road += map[v][i];
-				DFS(i);
+				DFS(i, sum + map[v][i]);
 				ch[i] = false;
-				road -= map[v][i];
 			}
 		}
 	}
@@ -48,7 +46,7 @@ int main(int argc, char* argv[])
 
 	ch[0] = true;
 
-	DFS(0);
+	DFS(0, 0);
 
 	cout << answer;
 
