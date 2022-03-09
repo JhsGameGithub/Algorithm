@@ -19,7 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Solution80.cpp" />
+    <ClCompile Include="Solution81.cpp" />
+    <ClCompile Include="Solution82.cpp" />
+    <ClCompile Include="Solution83.cpp" />
+    <ClCompile Include="Solution84.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
