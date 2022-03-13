@@ -18,5 +18,11 @@
     <ClCompile Include="Solution89.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Solution90.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution86.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
