@@ -15,17 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Solution91.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Solution92.cpp">
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DynamicArray.h">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution93.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution94.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
+    </ClInclude>
   </ItemGroup>
 </Project>
